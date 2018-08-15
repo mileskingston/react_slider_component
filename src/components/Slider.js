@@ -15,15 +15,15 @@ class Slider extends Component {
       images: [
         {
           title: 'animal',
-          url: 'http://placeimg.com/220/240/tech'
+          url: 'http://placeimg.com/220/140/tech'
         },
         {
           title: 'nature',
-          url: 'http://placeimg.com/220/240/nature'
+          url: 'http://placeimg.com/220/140/nature'
         },
         {
           title: 'tech',
-          url: 'http://placeimg.com/220/240/tech'
+          url: 'http://placeimg.com/220/140/tech'
         }
       ]
     };
@@ -42,12 +42,13 @@ class Slider extends Component {
     }
     this.setState(prevState => ({
       currentIndex: prevState.currentIndex + 1,
-      translateValue: prevState.translateValue + -(this.slideWidth())
+      translateValue: prevState.translateValue + -(this.slideDimensions('width'))
     }));
   }
 
-  slideWidth() {
-    return document.querySelector('.slide').clientWidth;
+  slideDimensions(value) {
+    const slideObj = document.querySelector('.slide').getBoundingClientRect();
+    return slideObj.width;
   }
 
   render() {
@@ -55,7 +56,7 @@ class Slider extends Component {
 
     return (
       <div className="slider">
-        <div className="slider__wrapper" style={{ transform: `translateX(${state.translateValue}px)` }}>
+        <div className="slider__wrapper" style={{transform: `translateX(${state.translateValue}px)`}}>
           {state.images.map((image, i) =>
             <Slide key={i} url={image.url} alt={image.title} />)}
         </div>
