@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ArrowRight = props => (
-  <button className="arrw arrw--right" onClick={props.goToNextSlide}>right</button>
+  <button className="arrw arrw--right" onClick={props.onClick}>right</button>
 );
 
 ArrowRight.displayName = 'ArrowRight';
 
 ArrowRight.propTypes = {
-  goToNextSlide: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired
 };
 
 export default ArrowRight;

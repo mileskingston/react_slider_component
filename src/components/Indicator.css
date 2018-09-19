@@ -1,0 +1,25 @@
+.indicators {
+  display: inline-block;
+}
+
+.indicators .indicator:first-child {
+  margin-left: 0;
+}
+.indicators .indicator:last-child {
+  margin-right: 0;
+}
+
+.indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  margin: 0 3px;
+  border: 0;
+  border-radius: 50%;
+  background: grey;
+}
+
+.indicator--active {
+  background: black;
+}
