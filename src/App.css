@@ -4,7 +4,7 @@
   padding: 0 10px
 }
 
-.visually--hidden {
+.sr--only {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;

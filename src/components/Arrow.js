@@ -11,6 +11,8 @@ const Arrow = props => (
     }
     onClick={props.onClick}
   >
+    <span className="sr--only">{props.direction}</span>
+
     {props.direction === 'left'
       ? <Icon name="left" />
       : <Icon name="right" />}

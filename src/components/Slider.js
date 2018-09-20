@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Slide from './Slide';
 import Arrow from './Arrow';
-import Indicator from './PageDot';
+import PagerDot from './PageDot';
 
 import './Slider.css';
 
@@ -113,8 +113,9 @@ class Slider extends Component {
         {pager &&
           <div className="slider__pager">
             {images.map((image, i) => (
-              <Indicator
+              <PagerDot
                 key={i}
+                slide={i}
                 currentSlide={isCurrentSlide(i)}
                 onClick={() => { this.goToSelectedSlide(i); }}
               />
