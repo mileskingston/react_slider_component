@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './Slide.css';
+import './Slide.scss';
 
 const Slide = props => (
   <img

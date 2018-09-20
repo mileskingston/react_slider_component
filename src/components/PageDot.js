@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './PagerDot.css';
+import './PagerDot.scss';
 
 const PagerDot = ({
   onClick,

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from './Icon';
 
-import './Arrow.css';
+import './Arrow.scss';
 
 const Arrow = props => (
   <button

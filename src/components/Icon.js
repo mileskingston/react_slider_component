@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import '../images/icons.svg';
-import './Icon.css';
+import './Icon.scss';
 
 const Icon = props => (
   <svg className={`icon icon--${props.name}`}>

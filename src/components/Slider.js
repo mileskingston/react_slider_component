@@ -4,7 +4,7 @@ import Slide from './Slide';
 import Arrow from './Arrow';
 import PagerDot from './PageDot';
 
-import './Slider.css';
+import './Slider.scss';
 
 class Slider extends Component {
   constructor(props) {

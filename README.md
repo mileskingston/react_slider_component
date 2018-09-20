@@ -33,8 +33,7 @@ import Slider from './components/Slider';
 const settings = {
   pager: true,
   arrows: true,
-  maxWidth: '600',
-  title: 'Heading'
+  maxWidth: '600'
 };
 
 const SimpleSlider = () => (
@@ -50,7 +49,6 @@ export default SimpleSlider;
 
 ### TODO:
 
-* add accessibility to pager and arrows
 * add sass
 * add yarn
 * allow custom pager

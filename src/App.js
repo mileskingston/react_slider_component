@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from './components/Slider';
 
-import './App.css';
+import './App.scss';
 
 const settings = {
   pager: true,
