@@ -31,6 +31,14 @@ class Slider extends Component {
     };
   }
 
+  componentDidMount() {
+    window.addEventListener('resize', this.updatedSlideDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updatedSlideDimensions);
+  }
+
   goToPrevSlide = () => {
     const currentSlideEqualFirst = this.state.currentIndex === 0;
 
@@ -66,6 +74,12 @@ class Slider extends Component {
       document.querySelector('.slide').getBoundingClientRect();
 
     return slideObj.width;
+  }
+
+  updatedSlideDimensions = () => {
+    this.setState({
+      translateValue: -this.state.currentIndex * this.slideDimensions()
+    });
   }
 
   render() {
