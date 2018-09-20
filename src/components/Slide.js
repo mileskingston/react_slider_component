@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './Slide.css';
+
 const Slide = props => (
   <img
-    className={`slide ${props.currentSlide ? 'slide--active' : ''}`}
+    className={`slider__slide ${props.currentSlide ? 'slider__slide--active' : ''}`}
     src={props.url}
     alt={props.alt}
   />

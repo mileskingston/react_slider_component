@@ -25,6 +25,8 @@ npm run build
 | Webpack | 4.5.0 |
 
 /** TODO:
+* add sass
+* add unit tests
 * remove back effect in slideshow
 * slides to show
 * slides to scroll

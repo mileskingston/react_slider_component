@@ -1,15 +1,15 @@
-.indicators {
+.slider__indicators {
   display: inline-block;
 }
 
-.indicators .indicator:first-child {
+.slider__indicators .indicator:first-child {
   margin-left: 0;
 }
-.indicators .indicator:last-child {
+.slider__indicators .indicator:last-child {
   margin-right: 0;
 }
 
-.indicator {
+.slider__indicator {
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -20,6 +20,6 @@
   background: grey;
 }
 
-.indicator--active {
+.slider__indicator--active {
   background: black;
 }

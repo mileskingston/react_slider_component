@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './Arrow.css';
+
 const Arrow = props => (
   <button
-    className={`arrw ${props.direction === 'left' ? 'arrw--left' : 'arrw--right'}`}
+    className={
+      `slider__arrow ${props.direction === 'left' ? 'slider__arrow--left' : 'slider__arrow--right'}`
+    }
     onClick={props.onClick}
   >
     {props.direction === 'left' ? 'left' : 'right'}

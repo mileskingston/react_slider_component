@@ -6,7 +6,7 @@ import './Indicator.css';
 const Indicator = props => (
   <button
     type="button"
-    className={`indicator ${props.currentSlide ? 'indicator--active' : ''}`}
+    className={`slider__indicator ${props.currentSlide ? 'slider__indicator--active' : ''}`}
     onClick={() => { props.onClick(); }}
   />
 );
