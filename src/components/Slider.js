@@ -1,8 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Slide from './Slide';
-import ArrowLeft from './ArrowLeft';
-import ArrowRight from './ArrowRight';
+import Arrow from './Arrow';
 import Indicator from './Indicator';
 
 import './Slider.css';
@@ -98,8 +97,8 @@ class Slider extends Component {
 
         {arrows &&
           <Fragment>
-            <ArrowLeft onClick={() => { this.goToPrevSlide(); }} />
-            <ArrowRight onClick={() => { this.goToNextSlide(); }} />
+            <Arrow onClick={() => { this.goToPrevSlide(); }} />
+            <Arrow direction="right" onClick={() => { this.goToNextSlide(); }} />
           </Fragment>
         }
 
