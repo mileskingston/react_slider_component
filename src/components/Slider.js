@@ -45,8 +45,8 @@ class Slider extends Component {
       currentIndex: currentSlideEqualFirst
         ? this.state.images.length - 1 : prevState.currentIndex - 1,
       translateValue: currentSlideEqualFirst
-        ? (this.state.images.length - 1) * -(this.slideDimensions('width'))
-        : prevState.translateValue - -(this.slideDimensions('width'))
+        ? (this.state.images.length - 1) * -this.slideDimensions()
+        : prevState.translateValue - -this.slideDimensions()
     }));
   }
 
@@ -55,12 +55,12 @@ class Slider extends Component {
 
     this.setState(prevState => ({
       currentIndex: currentSlideEqualLast ? 0 : prevState.currentIndex + 1,
-      translateValue: currentSlideEqualLast ? 0 : prevState.translateValue - (this.slideDimensions('width'))
+      translateValue: currentSlideEqualLast ? 0 : prevState.translateValue - this.slideDimensions()
     }));
   }
 
   goToSelectedSlide = (index) => {
-    const slideTranslate = index === 0 ? 0 : index * -(this.slideDimensions('width'));
+    const slideTranslate = index === 0 ? 0 : index * -this.slideDimensions();
 
     this.setState({
       currentIndex: index,
@@ -70,7 +70,7 @@ class Slider extends Component {
 
   slideDimensions = () => {
     const slideObj =
-      document.querySelector('.slide').getBoundingClientRect();
+      document.querySelector('.slider__wrapper .slider__slide').getBoundingClientRect();
 
     return slideObj.width;
   }
@@ -83,7 +83,7 @@ class Slider extends Component {
 
   render() {
     const { currentIndex, translateValue, images } = this.state;
-    const { indicators, arrows } = this.props;
+    const { pager, arrows } = this.props;
     const isCurrentSlide = index => (currentIndex === index);
 
     return (
@@ -102,8 +102,8 @@ class Slider extends Component {
           </Fragment>
         }
 
-        {indicators &&
-          <div className="indicators">
+        {pager &&
+          <div className="slider__pager">
             {images.map((image, i) => (
               <Indicator
                 key={i}
@@ -121,12 +121,12 @@ class Slider extends Component {
 Slider.displayName = 'Slider';
 
 Slider.propTypes = {
-  indicators: PropTypes.bool,
+  pager: PropTypes.bool,
   arrows: PropTypes.bool
 };
 
 Slider.defaultProps = {
-  indicators: true,
+  pager: true,
   arrows: true
 };
 
