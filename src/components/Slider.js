@@ -32,35 +32,33 @@ class Slider extends Component {
   }
 
   goToPrevSlide = () => {
-    if (this.state.currentIndex === 0) {
-      return this.setState({
-        currentIndex: this.state.images.length - 1,
-        translateValue: ((this.state.images.length - 1) * -(this.slideDimensions('width')))
-      });
-    }
+    const currentSlideEqualFirst = this.state.currentIndex === 0;
+
     this.setState(prevState => ({
-      currentIndex: prevState.currentIndex - 1,
-      translateValue: prevState.translateValue - -(this.slideDimensions('width'))
+      currentIndex: currentSlideEqualFirst ? 
+        this.state.images.length - 1 : prevState.currentIndex - 1,
+      translateValue: currentSlideEqualFirst ?
+        (this.state.images.length - 1) * -(this.slideDimensions('width'))
+        : prevState.translateValue - -(this.slideDimensions('width'))
     }));
   }
 
   goToNextSlide = () => {
-    if (this.state.currentIndex === this.state.images.length - 1) {
-      return this.setState({
-        currentIndex: 0,
-        translateValue: 0
-      });
-    }
+    const currentSlideEqualLast = this.state.currentIndex === this.state.images.length - 1;
+
     this.setState(prevState => ({
-      currentIndex: prevState.currentIndex + 1,
-      translateValue: prevState.translateValue - (this.slideDimensions('width'))
+      currentIndex: currentSlideEqualLast ? 0 : prevState.currentIndex + 1,
+      translateValue: currentSlideEqualLast ? 0 : prevState.translateValue - (this.slideDimensions('width'))
     }));
   }
 
   goToSelectedSlide = (index) => {
-    this.setState(prevState => ({
-      currentIndex: index
-    }));
+    const slideTranslate = index === 0 ? 0 : index * -(this.slideDimensions('width'));
+
+    this.setState({
+      currentIndex: index,
+      translateValue: slideTranslate
+    })
   }
 
   slideDimensions(value) {

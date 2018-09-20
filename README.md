@@ -25,8 +25,5 @@ npm run build
 | Webpack | 4.5.0 |
 
 /** TODO:
-* tests
-* styled components
-* 
-*
+* resize event
 */
