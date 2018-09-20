@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Slide = (props) => (
+const Slide = props => (
   <img
     className={`slide ${props.currentSlide ? 'slide--active' : ''}`}
     src={props.url}

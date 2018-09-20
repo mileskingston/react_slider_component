@@ -35,10 +35,10 @@ class Slider extends Component {
     const currentSlideEqualFirst = this.state.currentIndex === 0;
 
     this.setState(prevState => ({
-      currentIndex: currentSlideEqualFirst ? 
-        this.state.images.length - 1 : prevState.currentIndex - 1,
-      translateValue: currentSlideEqualFirst ?
-        (this.state.images.length - 1) * -(this.slideDimensions('width'))
+      currentIndex: currentSlideEqualFirst
+        ? this.state.images.length - 1 : prevState.currentIndex - 1,
+      translateValue: currentSlideEqualFirst
+        ? (this.state.images.length - 1) * -(this.slideDimensions('width'))
         : prevState.translateValue - -(this.slideDimensions('width'))
     }));
   }
@@ -58,23 +58,25 @@ class Slider extends Component {
     this.setState({
       currentIndex: index,
       translateValue: slideTranslate
-    })
+    });
   }
 
-  slideDimensions(value) {
-    const slideObj = document.querySelector('.slide').getBoundingClientRect();
+  slideDimensions = () => {
+    const slideObj =
+      document.querySelector('.slide').getBoundingClientRect();
+
     return slideObj.width;
   }
 
   render() {
     const { currentIndex, translateValue, images } = this.state;
     const { indicators, arrows } = this.props;
-    const isCurrentSlide = (index) => (currentIndex === index);
+    const isCurrentSlide = index => (currentIndex === index);
 
     return (
       <div className="slider">
         {images.length &&
-          <div className="slider__wrapper" style={{transform: `translateX(${translateValue}px)`}}>
+          <div className="slider__wrapper" style={{ transform: `translateX(${translateValue}px)` }}>
             {images.map((image, i) =>
               <Slide key={i} currentSlide={isCurrentSlide(i)} url={image.url} alt={image.title} />)}
           </div>
@@ -89,13 +91,13 @@ class Slider extends Component {
 
         {indicators &&
           <div className="indicators">
-            {images.map((image, i) =>
+            {images.map((image, i) => (
               <Indicator
                 key={i}
                 currentSlide={isCurrentSlide(i)}
-                onClick={() => { this.goToSelectedSlide(i); }} 
+                onClick={() => { this.goToSelectedSlide(i); }}
               />
-            )}
+            ))}
           </div>
         }
       </div>
