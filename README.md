@@ -25,10 +25,34 @@ npm run build
  - arrows : bool (default true)
  - maxWidth: string (default 'none')
 
+example:
+```sh
+import React from 'react';
+import Slider from './components/Slider';
+
+const settings = {
+  pager: true,
+  arrows: true,
+  maxWidth: '600',
+  title: 'Heading'
+};
+
+const SimpleSlider = () => (
+  <div className="container">
+    <Slider {...settings} />
+  </div>
+);
+
+export default SimpleSlider;
+
+```
+
+
 ### TODO:
 
+* add accessibility to pager and arrows
 * add sass
-* icons for buttons
+* add yarn
 * allow custom pager
 * allow custom arrows
 * allow additional classes

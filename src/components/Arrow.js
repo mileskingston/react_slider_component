@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Icon from './Icon';
 
 import './Arrow.css';
 
@@ -10,7 +11,9 @@ const Arrow = props => (
     }
     onClick={props.onClick}
   >
-    {props.direction === 'left' ? 'left' : 'right'}
+    {props.direction === 'left'
+      ? <Icon name="left" />
+      : <Icon name="right" />}
   </button>
 );
 

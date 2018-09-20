@@ -1,12 +1,16 @@
 import React from 'react';
 import Slider from './components/Slider';
 
+import './App.css';
+
 const settings = {
-  pager: true
+  pager: true,
+  arrows: true,
+  maxWidth: '600'
 };
 
 const App = () => (
-  <div className="app">
+  <div className="container">
     <Slider {...settings} />
   </div>
 );

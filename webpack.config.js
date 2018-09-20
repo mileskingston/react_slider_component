@@ -9,6 +9,10 @@ module.exports = {
         use: ['babel-loader', 'eslint-loader']
       },
       {
+        test: /\.svg$/,
+        use: ['svg-sprite-loader']
+      },
+      {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
       }

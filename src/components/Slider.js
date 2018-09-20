@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Slide from './Slide';
 import Arrow from './Arrow';
-import Indicator from './Indicator';
+import Indicator from './PageDot';
 
 import './Slider.css';
 
@@ -83,11 +83,19 @@ class Slider extends Component {
 
   render() {
     const { currentIndex, translateValue, images } = this.state;
-    const { pager, arrows } = this.props;
+    const {
+      pager,
+      arrows,
+      maxWidth
+    } = this.props;
     const isCurrentSlide = index => (currentIndex === index);
+    const maxWidthFormatted = maxWidth === 'none' ? maxWidth : `${maxWidth}px`;
 
     return (
-      <div className="slider">
+      <div
+        className="slider"
+        style={{ maxWidth: maxWidthFormatted }}
+      >
         {images.length &&
           <div className="slider__wrapper" style={{ transform: `translateX(${translateValue}px)` }}>
             {images.map((image, i) =>
@@ -122,12 +130,14 @@ Slider.displayName = 'Slider';
 
 Slider.propTypes = {
   pager: PropTypes.bool,
-  arrows: PropTypes.bool
+  arrows: PropTypes.bool,
+  maxWidth: PropTypes.string
 };
 
 Slider.defaultProps = {
   pager: true,
-  arrows: true
+  arrows: true,
+  maxWidth: 'none'
 };
 
 export default Slider;
