@@ -24,6 +24,7 @@ npm run build
  - pager : bool (default true)
  - arrows : bool (default true)
  - maxWidth: string (default 'none')
+ - className: string (default '')
 
 example:
 ```sh
@@ -33,7 +34,8 @@ import Slider from './components/Slider';
 const settings = {
   pager: true,
   arrows: true,
-  maxWidth: '600'
+  maxWidth: '600',
+  className: 'new-slider'
 };
 
 const SimpleSlider = () => (
@@ -46,14 +48,10 @@ export default SimpleSlider;
 
 ```
 
-
 ### TODO:
 
-* add sass
-* add yarn
 * allow custom pager
 * allow custom arrows
-* allow additional classes
 * add unit tests
 * create api call for images
 * remove back effect in slideshow

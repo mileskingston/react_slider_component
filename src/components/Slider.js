@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Slide from './Slide';
 import Arrow from './Arrow';
-import PagerDot from './PageDot';
+import PagerDot from './PagerDot';
 
 import './Slider.scss';
 
@@ -86,22 +86,22 @@ class Slider extends Component {
     const {
       pager,
       arrows,
-      maxWidth
+      maxWidth,
+      className
     } = this.props;
     const isCurrentSlide = index => (currentIndex === index);
     const maxWidthFormatted = maxWidth === 'none' ? maxWidth : `${maxWidth}px`;
 
-    return (
+    return images.length ? (
       <div
-        className="slider"
+        className={`slider ${className.length ? className : ''}`}
         style={{ maxWidth: maxWidthFormatted }}
       >
-        {images.length &&
-          <div className="slider__wrapper" style={{ transform: `translateX(${translateValue}px)` }}>
-            {images.map((image, i) =>
-              <Slide key={i} currentSlide={isCurrentSlide(i)} url={image.url} alt={image.title} />)}
-          </div>
-        }
+
+        <div className="slider__wrapper" style={{ transform: `translateX(${translateValue}px)` }}>
+          {images.map((image, i) =>
+            <Slide key={i} currentSlide={isCurrentSlide(i)} url={image.url} alt={image.title} />)}
+        </div>
 
         {arrows &&
           <Fragment>
@@ -123,7 +123,7 @@ class Slider extends Component {
           </div>
         }
       </div>
-    );
+    ) : null;
   }
 }
 
@@ -132,13 +132,15 @@ Slider.displayName = 'Slider';
 Slider.propTypes = {
   pager: PropTypes.bool,
   arrows: PropTypes.bool,
-  maxWidth: PropTypes.string
+  maxWidth: PropTypes.string,
+  className: PropTypes.string
 };
 
 Slider.defaultProps = {
   pager: true,
   arrows: true,
-  maxWidth: 'none'
+  maxWidth: 'none',
+  className: ''
 };
 
 export default Slider;
