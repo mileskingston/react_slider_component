@@ -1,35 +1,36 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 import Arrow from './Arrow';
 
 describe('Arrow component', () => {
-    it('should render with matching props', () => {
-        const mockFunc = jest.fn();
-        const wrapper = mount(<Arrow onClick={mockFunc} />);
+  const mockFn = jest.fn();
+  const props = {
+    onClick: mockFn
+  };
 
-        expect(wrapper).toMatchSnapshot();
-    });
+  beforeEach(() => {
+    mockFn.mockClear();
+  });
 
-    it('should call onClick function on click', () => {
-        const mockFunc = jest.fn();
-        const wrapper = mount(<Arrow onClick={mockFunc} />);
+  it('should render with matching props', () => {
+    const wrapper = shallow(<Arrow {...props} />);
+    expect(wrapper).toMatchSnapshot();
+  });
 
-        wrapper.simulate('click');
-        expect(mockFunc).toHaveBeenCalled();
-    });
+  it('should call onClick function on click', () => {
+    const wrapper = shallow(<Arrow {...props} />);
+    wrapper.simulate('click');
+    expect(mockFn.mock.calls.length).toBe(1);
+  });
 
-    it('should contain correct class', () => {
-        const mockFunc = jest.fn();
-        const wrapper = mount(<Arrow onClick={mockFunc} direction="right" />);
+  it('should contain correct icon', () => {
+    const wrapper = shallow(<Arrow {...props} direction="right" />);
+    expect(wrapper).toMatchSnapshot();
+  });
 
-        expect(wrapper.find('.slider__arrow--right').length).toBe(1);
-    });
-
-    it('should contain correct icon', () => {
-        const mockFunc = jest.fn();
-        const wrapper = mount(<Arrow onClick={mockFunc} direction="right" />);
-
-        expect(wrapper.find('.icon--right').length).toBe(1);
-    });
+  it('should contain correct class', () => {
+    const wrapper = shallow(<Arrow {...props} direction="right" />);
+    expect(wrapper.find('.slider__arrow--right').length).toBe(1);
+  });
 });

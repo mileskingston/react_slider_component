@@ -1,46 +1,204 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Arrow component should render with matching props 1`] = `
-ReactWrapper {
+exports[`Arrow component should contain correct icon 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Arrow
-    direction="left"
+    direction="right"
     onClick={[MockFunction]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
     "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
-  Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
+    "nodeType": "host",
     "props": Object {
-      "direction": "left",
+      "children": Array [
+        <span
+          className="sr--only"
+        >
+          right
+        </span>,
+        <Icon
+          name="right"
+        />,
+      ],
+      "className": "slider__arrow slider__arrow--right",
       "onClick": [MockFunction],
     },
     "ref": null,
-    "rendered": Object {
-      "instance": <button
-        class="slider__arrow slider__arrow--left"
-      >
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "right",
+          "className": "sr--only",
+        },
+        "ref": null,
+        "rendered": "right",
+        "type": "span",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "name": "right",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "button",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <span
+            className="sr--only"
+          >
+            right
+          </span>,
+          <Icon
+            name="right"
+          />,
+        ],
+        "className": "slider__arrow slider__arrow--right",
+        "onClick": [MockFunction],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "right",
+            "className": "sr--only",
+          },
+          "ref": null,
+          "rendered": "right",
+          "type": "span",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "name": "right",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "button",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`Arrow component should render with matching props 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Arrow
+    direction="left"
+    onClick={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
         <span
-          class="sr--only"
+          className="sr--only"
         >
           left
-        </span>
-        <svg
-          class="icon icon--left"
-        >
-          <use
-            xlink:href="#icons_left"
-          />
-        </svg>
-      </button>,
+        </span>,
+        <Icon
+          name="left"
+        />,
+      ],
+      "className": "slider__arrow slider__arrow--left",
+      "onClick": [MockFunction],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "left",
+          "className": "sr--only",
+        },
+        "ref": null,
+        "rendered": "left",
+        "type": "span",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "name": "left",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "button",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
       "key": undefined,
       "nodeType": "host",
       "props": Object {
@@ -60,11 +218,7 @@ ReactWrapper {
       "ref": null,
       "rendered": Array [
         Object {
-          "instance": <span
-            class="sr--only"
-          >
-            left
-          </span>,
+          "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
@@ -72,9 +226,7 @@ ReactWrapper {
             "className": "sr--only",
           },
           "ref": null,
-          "rendered": Array [
-            "left",
-          ],
+          "rendered": "left",
           "type": "span",
         },
         Object {
@@ -85,171 +237,24 @@ ReactWrapper {
             "name": "left",
           },
           "ref": null,
-          "rendered": Object {
-            "instance": <svg
-              class="icon icon--left"
-            >
-              <use
-                xlink:href="#icons_left"
-              />
-            </svg>,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <use
-                xlinkHref="#icons_left"
-              />,
-              "className": "icon icon--left",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": <use
-                  xlink:href="#icons_left"
-                />,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "xlinkHref": "#icons_left",
-                },
-                "ref": null,
-                "rendered": Array [
-                  undefined,
-                ],
-                "type": "use",
-              },
-            ],
-            "type": "svg",
-          },
+          "rendered": null,
           "type": [Function],
         },
       ],
       "type": "button",
-    },
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "direction": "left",
-        "onClick": [MockFunction],
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": <button
-          class="slider__arrow slider__arrow--left"
-        >
-          <span
-            class="sr--only"
-          >
-            left
-          </span>
-          <svg
-            class="icon icon--left"
-          >
-            <use
-              xlink:href="#icons_left"
-            />
-          </svg>
-        </button>,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <span
-              className="sr--only"
-            >
-              left
-            </span>,
-            <Icon
-              name="left"
-            />,
-          ],
-          "className": "slider__arrow slider__arrow--left",
-          "onClick": [MockFunction],
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": <span
-              class="sr--only"
-            >
-              left
-            </span>,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "left",
-              "className": "sr--only",
-            },
-            "ref": null,
-            "rendered": Array [
-              "left",
-            ],
-            "type": "span",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "name": "left",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": <svg
-                class="icon icon--left"
-              >
-                <use
-                  xlink:href="#icons_left"
-                />
-              </svg>,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <use
-                  xlinkHref="#icons_left"
-                />,
-                "className": "icon icon--left",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": <use
-                    xlink:href="#icons_left"
-                  />,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "xlinkHref": "#icons_left",
-                  },
-                  "ref": null,
-                  "rendered": Array [
-                    undefined,
-                  ],
-                  "type": "use",
-                },
-              ],
-              "type": "svg",
-            },
-            "type": [Function],
-          },
-        ],
-        "type": "button",
-      },
-      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
         "lifecycles": Object {
           "componentDidUpdate": Object {
             "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
           },
           "getDerivedStateFromProps": true,
           "getSnapshotBeforeUpdate": true,
@@ -259,8 +264,6 @@ ReactWrapper {
         },
       },
     },
-    "attachTo": undefined,
-    "hydrateIn": undefined,
   },
 }
 `;

@@ -3,23 +3,25 @@ import { shallow } from 'enzyme';
 
 import PagerDot from './PagerDot';
 
-const curruentSlideTrue = true;
+const mockFn = jest.fn();
+
+const props = {
+  curruentSlide: true,
+  onClick: mockFn,
+  slide: 0
+};
 
 describe('PagerDot component', () => {
-    it('should render with matching props', () => {
-        const mockFunc = jest.fn();
-        const wrapper = shallow(
-            <PagerDot slide={0} currentSlide={curruentSlideTrue} onClick={mockFunc} />
-        );
-        
-        expect(wrapper).toMatchSnapshot();
-    });
+  it('should render with matching props', () => {
+    const wrapper = shallow(<PagerDot {...props} />);
 
-    it('should call onClick function on click', () => {
-        const mockFunc = jest.fn();
-        const wrapper = shallow(<PagerDot slide={0} currentSlide={curruentSlideTrue} onClick={mockFunc} />);
+    expect(wrapper).toMatchSnapshot();
+  });
 
-        wrapper.simulate('click');
-        expect(mockFunc).toHaveBeenCalled();
-    });
-}); 
+  it('should call onClick function on click', () => {
+    const wrapper = shallow(<PagerDot {...props} />);
+
+    wrapper.simulate('click');
+    expect(mockFn).toHaveBeenCalled();
+  });
+});

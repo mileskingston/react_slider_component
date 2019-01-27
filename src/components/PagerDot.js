@@ -21,9 +21,13 @@ const PagerDot = ({
 PagerDot.displayName = 'PagerDot';
 
 PagerDot.propTypes = {
-  currentSlide: PropTypes.bool.isRequired,
+  currentSlide: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
   slide: PropTypes.number.isRequired
+};
+
+PagerDot.defaultProps = {
+  currentSlide: false
 };
 
 export default PagerDot;

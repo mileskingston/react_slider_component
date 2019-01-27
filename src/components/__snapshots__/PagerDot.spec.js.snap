@@ -4,12 +4,14 @@ exports[`PagerDot component should render with matching props 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <PagerDot
-    currentSlide={true}
+    currentSlide={false}
+    curruentSlide={true}
     onClick={[MockFunction]}
     slide={0}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
     "simulateError": [Function],
@@ -26,9 +28,9 @@ ShallowWrapper {
       >
         0
       </span>,
-      "className": "pager__dot pager__dot--active",
+      "className": "pager__dot ",
       "onClick": [Function],
-      "tabIndex": "-1",
+      "tabIndex": "0",
       "type": "button",
     },
     "ref": null,
@@ -57,9 +59,9 @@ ShallowWrapper {
         >
           0
         </span>,
-        "className": "pager__dot pager__dot--active",
+        "className": "pager__dot ",
         "onClick": [Function],
-        "tabIndex": "-1",
+        "tabIndex": "0",
         "type": "button",
       },
       "ref": null,
@@ -82,9 +84,13 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
         "lifecycles": Object {
           "componentDidUpdate": Object {
             "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
           },
           "getDerivedStateFromProps": true,
           "getSnapshotBeforeUpdate": true,
@@ -94,8 +100,6 @@ ShallowWrapper {
         },
       },
     },
-    "attachTo": undefined,
-    "hydrateIn": undefined,
   },
 }
 `;
